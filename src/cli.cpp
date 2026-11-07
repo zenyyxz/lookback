@@ -29,4 +29,4 @@ namespace lookback::cli {
         if ()
     }
     */
-}
+} // namespace lookback::cli
