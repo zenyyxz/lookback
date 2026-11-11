@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # crucial for clangd lsp.
 
 include_directories(include)
+
 set(SOURCES
   src/main.cpp
   src/cli.cpp
