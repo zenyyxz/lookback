@@ -12,6 +12,7 @@ set(SOURCES
   src/main.cpp
   src/cli.cpp
   src/paperTrading.cpp
+  src/utils.cpp
 )
 
 add_executable(lookback ${SOURCES})

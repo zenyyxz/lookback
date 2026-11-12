@@ -1,6 +1,7 @@
 #include "cli.hpp"
 #include "paperTrading.hpp"
 #include "tradeData.hpp"
+#include "fetchCandles.hpp"
 #include <iostream>
 
 int main(int argc, char* argv[]) {
@@ -15,17 +16,20 @@ int main(int argc, char* argv[]) {
         parser.printHelp();
     }
 
-    std::cout << "Capital before updating.\n";
-    std::cout << mockTrade.checkBalance() << "\n\n";
-    std::cout << "Capital after updating.\n";
-    mockTrade.setInitialWalletCapital(15000);
-    std::cout << mockTrade.checkBalance() << "\n\n";
+    lookback::trade::FetchCandles* fetchObj = new lookback::trade::FetchCandlesCSV();
+    std::vector<lookback::trade::Candle> candleVec = fetchObj->fetch("BCHUSD_250328-15m-2025-03.csv");
+    if (candleVec.empty()) return 1;
 
-    std::cout << "Balance after placing a trade.\n";
-    lookback::trade::TradeData trade("BTCUSDT", 500, true, 3, 76008, 78000);
-
-    mockTrade.placeTrade(trade);
-    std::cout << mockTrade.checkBalance() << "\n\n";
+    for (int i{0}; i < 10; i++) {
+        std::cout << "\n\nChecking candle " << i <<   "'s data\n"
+            << "open_time: " << candleVec[0].open_time << "\n"
+            << "open: " << candleVec[0].open << "\n"
+            << "high: " << candleVec[0].high << "\n"
+            << "low: " << candleVec[0].low << "\n"
+            << "close: " << candleVec[0].close << "\n"
+            << "volume: " << candleVec[0].volume << "\n"
+            << "close_time: " << candleVec[0].close_time << "\n";
+    }
 
     return 0;
 }

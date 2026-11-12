@@ -21,13 +21,13 @@ namespace lookback::trade {
         Candle() = default;
 
         int64_t open_time;
-        int64_t open;
-        int64_t close;
-        int64_t high;
-        int64_t low;
-        int64_t volume;
+        double open;
+        double close;
+        double high;
+        double low;
+        double volume;
         int64_t close_time;
-        int64_t quote_volume;
+        // int64_t quote_volume;
     };
 } // namespace lookback::trade
 
