@@ -22,13 +22,13 @@ int main(int argc, char* argv[]) {
 
     for (int i{0}; i < 10; i++) {
         std::cout << "\n\nChecking candle " << i <<   "'s data\n"
-            << "open_time: " << candleVec[0].open_time << "\n"
-            << "open: " << candleVec[0].open << "\n"
-            << "high: " << candleVec[0].high << "\n"
-            << "low: " << candleVec[0].low << "\n"
-            << "close: " << candleVec[0].close << "\n"
-            << "volume: " << candleVec[0].volume << "\n"
-            << "close_time: " << candleVec[0].close_time << "\n";
+            << "open_time: " << candleVec[i].open_time << "\n"
+            << "open: " << candleVec[i].open << "\n"
+            << "high: " << candleVec[i].high << "\n"
+            << "low: " << candleVec[i].low << "\n"
+            << "close: " << candleVec[i].close << "\n"
+            << "volume: " << candleVec[i].volume << "\n"
+            << "close_time: " << candleVec[i].close_time << "\n";
     }
 
     return 0;
