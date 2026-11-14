@@ -1,18 +1,18 @@
-#include "lookback/trading/paperTrading.hpp"
+#include "lookback/trading/trade.hpp"
 
-namespace lookback::papertrading {
+namespace lookback::trade {
 
-    int PaperTrading::checkBalance() const {
+    double PaperTrade::checkBalance() const {
         return walletCapital;
     }
 
-    void PaperTrading::placeTrade(const trade::TradeData &trade) {
+    void PaperTrade::placeTrade(const trade::TradeData &trade) {
         walletCapital -= trade.margin;
         currentTrades.push_back(trade);
     }
 
-    void PaperTrading::setInitialWalletCapital(int amount) {
+    void PaperTrade::setInitialWalletCapital(int amount) {
         walletCapital = amount;
     }
 
-} // namespace lookback::papertrading
+} // namespace lookback::trade
