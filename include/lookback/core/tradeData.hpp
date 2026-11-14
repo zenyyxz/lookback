@@ -29,6 +29,11 @@ namespace lookback::trade {
         int64_t close_time;
         // int64_t quote_volume;
     };
-} // namespace lookback::trade
 
-//open_time,open,high,low,close,volume,close_time,quote_volume,count,taker_buy_volume,taker_buy_quote_volume,ignore
+    enum class Signal {
+        BUY = 0,
+        SELL,
+        HOLD
+    };
+
+} // namespace lookback::trade

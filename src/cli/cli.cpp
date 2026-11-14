@@ -1,4 +1,4 @@
-#include "cli.hpp"
+#include "lookback/cli/cli.hpp"
 
 #include <iostream>
 
@@ -11,10 +11,11 @@ namespace lookback::cli {
     }
 
     void CLIParser::printHelp() const {
-        std::cout << "Hi, ask me how i am doing.\n\n"
-        << "I'm a dumb bot.\n"
-        << "how are you doing bud?\n"
-        << "how's life?\n\n";
+        std::cout << "Usage: lookback [options...]\n\n"
+        << " -h, --help                          Print this message\n"
+        << " -s, --strategy                      Choose trading strategy.\n"
+        << " -f, --filepath                      Use local CSV file to get candle data.\n"
+        << " This is all for now. \n\n";
     }
 
     bool CLIParser::hasCommand(const std::string &command) const {

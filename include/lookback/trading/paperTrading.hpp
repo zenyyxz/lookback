@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tradeData.hpp"
+#include "lookback/core/tradeData.hpp"
 #include <vector>
 
 namespace lookback::papertrading {

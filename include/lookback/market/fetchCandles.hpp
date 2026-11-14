@@ -1,7 +1,7 @@
 #pragma once
 
-#include "tradeData.hpp"
-#include "utils.hpp"
+#include "lookback/core/tradeData.hpp"
+#include "lookback/core/utils.hpp"
 #include <cstdint>
 #include <fstream>
 #include <vector>
@@ -57,4 +57,5 @@ namespace lookback::trade {
                 return candles;
             }
     };
+
 } // namespace lookback::trade
